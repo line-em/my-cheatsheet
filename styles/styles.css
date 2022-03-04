@@ -1,0 +1,109 @@
+/*** General Styles ***/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font: 400 18px/1.5 'Fraunces', serif;
+	background-color: rgb(221, 198, 193);
+	color: rgb(43, 43, 44);
+	scrollbar-width: thin;
+	scrollbar-color: rgb(173, 21, 21) rgb(221, 198, 193);
+}
+
+main {
+	display: grid;
+	grid-template-columns: 600px 600px 600px;
+	grid-template-rows: 350px 350px;
+	grid-row-gap: 10px;
+	justify-content: center;
+	margin: 2%;
+}
+
+/*** footer and nav ***/
+
+footer {
+	background-color: rgb(173, 21, 21);
+	color: rgb(221, 198, 193);
+	padding: 0.2em;
+	font-size: 13px;
+	font-weight: 700;
+	font-style: italic;
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+
+footer a {
+	color: rgb(221, 198, 193);
+}
+
+h1 {
+	margin: 5px;
+	font: 700 90px 'Fraunces', serif;
+}
+
+.active {
+	-webkit-text-decoration: underline 10px rgb(173, 21, 21);
+	text-decoration: underline 10px rgb(173, 21, 21);
+}
+
+.notavailable {
+	font-style: italic;
+	color: rgb(134, 78, 78);
+}
+
+a {
+	text-decoration: none;
+	font-style: italic;
+	color: rgb(134, 78, 78);
+}
+
+nav a:hover {
+	color: rgb(173, 21, 21);
+	-webkit-text-decoration: underline 10px rgb(43, 43, 44);
+	text-decoration: underline 10px rgb(43, 43, 44);
+	transition: ease 300ms;
+}
+
+a:hover {
+	-webkit-text-decoration: underline 10px rgb(43, 43, 44);
+	text-decoration: underline 2px rgb(43, 43, 44);
+}
+
+/*** content ***/
+
+section {
+	display: inline-block;
+	border-top: 3px solid rgb(173, 21, 21);
+	margin: 2% 4%;
+	/***	width: 450px;
+	max-height: 300px; ***/
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+table,
+code {
+	background-color: rgb(235, 214, 210);
+	margin: 0.4em;
+}
+
+code,
+.code {
+	display: block;
+	padding: 0.5em;
+	font-size: 13px;
+	margin: 0.4em;
+	font-family: 'DM Mono', monospace;
+	color: rgb(173, 21, 21);
+}
+
+th,
+td {
+	padding: 0.3em;
+	font-size: 16px;
+}

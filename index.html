@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
    <title>Html</title>
-   <link rel="stylesheet" href="./styles.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Fraunces:ital,wght@0,400;0,700;1,300;1,700&display=swap" rel="stylesheet">
+   <link rel='stylesheet' href='./styles/styles.css'>
+   <link rel='preconnect' href='https://fonts.googleapis.com'>
+   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+   <link href='https://fonts.googleapis.com/css2?family=DM+Mono&family=Fraunces:ital,wght@0,400;0,700;1,300;1,700&display=swap' rel='stylesheet'>
 </head>
 
 <body>
-   <navbar>
-      <h1>* <span class="active">HTML</span> | <a href="./css.html">CSS</a></h1>
-   </navbar>
+   <nav>
+      <h1>*
+         <span class='active'>HTML</span> |
+         <a href='./css.html'>CSS</a> |
+         <span class='notavailable'>Javascript</span> |
+         <span class='notavailable'>React.js</span>
+      </h1>
+   </nav>
    <main>
 
       <section id='tables'>
@@ -31,37 +36,37 @@
             </thead>
             <tbody>
                <tr>
-                  <td class="code">&lt;table&gt;</td>
+                  <td class='code'>&lt;table&gt;</td>
                   <td>Table</td>
                   <td>The wrapper for all HTML tables</td>
                </tr>
                <tr>
-                  <td class="code">&lt;thead&gt;</td>
+                  <td class='code'>&lt;thead&gt;</td>
                   <td>Table Head</td>
                   <td>The set of rows containing column headers</td>
                </tr>
                <tr>
-                  <td class="code">&lt;tbody&gt;</td>
+                  <td class='code'>&lt;tbody&gt;</td>
                   <td>Table Body</td>
                   <td>The set of rows containing table data</td>
                </tr>
                <tr>
-                  <td class="code">&lt;tr&gt;</td>
+                  <td class='code'>&lt;tr&gt;</td>
                   <td>Table Row</td>
                   <td>The table rows container</td>
                </tr>
                <tr>
-                  <td class="code">&lt;th&gt;</td>
+                  <td class='code'>&lt;th&gt;</td>
                   <td>Table Data</td>
                   <td>The column header data</td>
                </tr>
                <tr>
-                  <td class="code">&lt;td&gt;</td>
+                  <td class='code'>&lt;td&gt;</td>
                   <td>Table Data</td>
                   <td>The actual data</td>
                </tr>
                <tr>
-                  <td class="code">&lt;tfoot&gt;</td>
+                  <td class='code'>&lt;tfoot&gt;</td>
                   <td>Table Foot</td>
                   <td>The set of rows defining the footer in a table</td>
                </tr>
@@ -81,12 +86,12 @@
             </thead>
             <tbody>
                <tr>
-                  <td class="code">colspan</td>
+                  <td class='code'>colspan</td>
                   <td>Column Span</td>
                   <td>Defines how many columns a td element should span/extend</td>
                </tr>
                <tr>
-                  <td class="code">rowspan</td>
+                  <td class='code'>rowspan</td>
                   <td>Row Span</td>
                   <td>Defines how many rows a td element should span/extend</td>
                </tr>
@@ -97,27 +102,26 @@
          <h2>Load Javascript</h2>
          <code class='code'>&lt;script src=&quot;//cdn-5ce4a003f911c80f50818892.closte.com/script.js&quot; async&gt;&lt;/script&gt;</code>
          <h2>Lazy Loading: Media</h2>
-         <code class="code">img src="x.jpeg" loading="lazy"</code>
+         <code class='code'>img src='x.jpeg' loading='lazy'</code>
       </section>
       <section id='semantic'>
          <h2>Semantic Tags</h2>
-         <code class="code">
+         <code class='code'>
             &lt;header&gt;</code>
-         <code class="code">&lt;navbar&gt;</code>
-         <code class="code">&lt;figure&gt;
-            &lt;img src=""&gt;
+         <code class='code'>&lt;nav&gt;</code>
+         <code class='code'>&lt;figure&gt;
+            &lt;img src=''&gt;
             &lt;figcaption&gt;Description&lt;figcaption&gt;
             &lt;figure&gt;</code>
 
-         <code class="code"> &lt;section&gt;
+         <code class='code'> &lt;section&gt;
             &lt;article&gt;
             &lt;/section&gt;</code>
 
-         <code class="code">&lt;aside&gt;</code>
+         <code class='code'>&lt;aside&gt;</code>
 
-         <code class="code">&lt;footer&gt;</code>
+         <code class='code'>&lt;footer&gt;</code>
 
-         </code>
       </section>
       <section id='forms'>
          <h2>Forms: Input</h2>
@@ -165,7 +169,7 @@
       </section>
       <section id='forms2'>
          <h2>Forms</h2>
-         WIP / Incomplete! <a href="https://www.codecademy.com/learn/learn-html/modules/learn-html-forms/cheatsheet">CodeAcademy reference</a>
+         WIP / Incomplete! <a href='https://www.codecademy.com/learn/learn-html/modules/learn-html-forms/cheatsheet'>CodeAcademy reference</a>
          <!--
          <table>
             <thead>
@@ -177,56 +181,56 @@
             </thead>
             <tbody>
                <tr>
-                  <td class="code">&lt;textarea&gt;</td>
+                  <td class='code'>&lt;textarea&gt;</td>
                   <td>multi-line input</td>
-                  <td class="code">&lt;textarea rows=&quot;10&quot; cols=&quot;30&quot; name=&quot;comment&quot;&gt;&lt;/textarea&gt;</td>
+                  <td class='code'>&lt;textarea rows=&quot;10&quot; cols=&quot;30&quot; name=&quot;comment&quot;&gt;&lt;/textarea&gt;</td>
                </tr>
                <tr>
-                  <td class="code">&lt;form&gt;</td>
+                  <td class='code'>&lt;form&gt;</td>
                   <td>collect and send info to an external source</td>
-                  <td class="code">&lt;form method=&quot;post&quot; action=&quot;http://server1&quot;&gt;
+                  <td class='code'>&lt;form method=&quot;post&quot; action=&quot;http://server1&quot;&gt;
                      Enter your name:
                      &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;
                      &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
                      &lt;/form&gt;</td>
                </tr>
                <tr>
-                  <td class="code">form method and action</td>
+                  <td class='code'>form method and action</td>
                   <td>submit a form</td>
-                  <td class="code">&lt;form action="/.html" method="PUT"&gt;</td>
+                  <td class='code'>&lt;form action='/.html' method='PUT'&gt;</td>
                </tr>
                <tr>
-                  <td class="code">&lt;select&gt;</td>
+                  <td class='code'>&lt;select&gt;</td>
                   <td>dropdown list</td>
-                  <td class="code">&lt;select name=&quot;rental-option&quot;&gt;
+                  <td class='code'>&lt;select name=&quot;rental-option&quot;&gt;
                      &lt;option value=&quot;small&quot;&gt;Small&lt;/option&gt;
                      &lt;option value=&quot;lux&quot;&gt;Luxury&lt;/option&gt;
                      &lt;/select&gt;</td>
                </tr>
 
-               <td class="code">&lt;datalist&gt;</td>
+               <td class='code'>&lt;datalist&gt;</td>
                <td>search / autocomplete</td>
-               <td class="code">&lt;input list=&quot;ide&quot;&gt;<br>
+               <td class='code'>&lt;input list=&quot;ide&quot;&gt;<br>
                   &lt;datalist id=&quot;ide&quot;&gt;<br>
                   &lt;option value=&quot;Visual Studio Code&quot; /&gt;<br>
                   &lt;option value=&quot;Atom&quot; /&gt;<br>
                   &lt;option value=&quot;Sublime Text&quot; /&gt;<br>
                   &lt;/datalist&gt;</td>
                </tr>
-               <!--
+               
                 <tr>
-                  <td class="code">&lt;&gt;</td>
+                  <td class='code'>&lt;&gt;</td>
                   <td></td>
-                  <td class="code"></td>
+                  <td class='code'></td>
                 </tr>
-            -->
+            
          <tr>
             </tbody>
             </table>-->
       </section>
 
    </main>
-   <footer>Made with ♥ by <a href="">@Line-em</a></footer>
+   <footer>Made with ♥ by <a href=''>@Line-em</a></footer>
 </body>
 
 </html>

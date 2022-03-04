@@ -2,7 +2,7 @@
 
 Single-Page HTML Cheatsheet built at CodeAcademy's Front End Engineer code. 🎉
 
-![Cheatsheet Thumbnail](thumbnail.png 'Thumbnail')
+![Cheatsheet Thumbnail](./images/thumbnail.png 'Thumbnail')
 
 It contains Table / Forms / Semantic information, and it's currently a WIP.
 
