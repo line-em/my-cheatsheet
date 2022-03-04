@@ -20,9 +20,8 @@ main {
 	margin: 2% 4%;
 }
 
-/*** Header, footer and Navbar ***/
+/*** footer and Navbar ***/
 
-header,
 footer {
 	background-color: rgb(173, 21, 21);
 	color: rgb(221, 198, 193);
@@ -30,9 +29,6 @@ footer {
 	font-weight: 700;
 	font-style: italic;
 	text-align: center;
-}
-
-footer {
 	position: absolute;
 	width: 100%;
 	bottom: 0;
