@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>Html</title>
+   <link rel='stylesheet' href='./styles/styles.css'>
+   <link rel='preconnect' href='https://fonts.googleapis.com'>
+   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;700&family=DM+Mono&family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   <nav>
+      <h1>*
+         <a href='./css.html'>◄</a> |
+         <span class='active'>CSS Variables</span>
+      </h1>
+   </nav>
+   <main>
+
+      <section>
+         <h2>CSS Variables</h2>
+         <h3><a href='https://scrimba.com/learn/cssvariables/responsiveness-and-variables-css-variables-tutorial-cvRdVhd'>Scrimba Course</a></h3>
+         <pre><code class='code'>:root{
+            --red:#f00;
+            --columns: 200px 200px;
+            --title: Raleway},</code></pre>
+         <p>The variables work for colors, fonts, and sizes. Those variables will be mentioned throughout the document as var(--red), var(--columns), and var(--title).</p>
+         <h3>Fallback</h3>
+         <p>A fallback value is a property value that is to be used if the CSS variable cannot be accessed and used by the browser. In this case, blue.</p>
+         <pre><code class='code'> button {
+               color: var(--main-color, blue);
+               }</code></pre>
+      </section>
+      <section>
+         <h3>Override</h3>
+         <p>The variables can be overrided and inherited inside specific elements, without affecting other elements.</p>
+         <pre><code class='code'>h1, p {
+            color: var(--red);}
+.mainmenu{
+            --red:#f00a20
+            background-color:var(--green);}</code></pre>
+         <p>Ou seja, dentro do elemento com a classe mainmenu, todos os elementos que usem o var(--red), como h1, botoes, etc, vao ter um update de cor. Em outras palavras, os elementos que sao child do mainmenu e que possuam as cores var(--red), terao o override.</p>
+         <p> Por isso e importante gerar cores para elementos como h1 e p, mesmo que seja redundante (ah, mas ja esta no body!). Se as cores nao estiverem definidas explicitamente nos elementos, nao e possivel fazer override, porque nao tem nenhum valor de referencia para o override.</p>
+      </section>
+      <section>
+         <h3>Local Variables: Same logic.</h3>
+         <p>The variables can be overrided and inherited inside specific elements, without affecting other elements.</p>
+         <pre><code class='code'>#navbar {
+            --nav-red: #f00;
+            }
+#navbar a{
+            color: var(--nav-red)
+            }</code></pre>
+         <p>Sao variaveis locais, que nao serao usadas no resto do documento, entao podem ficar contidas em uma area especifica ao inves do root.</p>
+      </section>
+      <section>
+         <h3>Theming</h3>
+         <p>You can easily make elements stand-out from the rest, be it a feature, a purchase/purchased button, etc, with color variables. <strong>Exemplo de feature:</strong> Supoe-se um grid de elementos, mostrando varios produtos e intercalando cores entre si.</p>
+         <pre><code class='code'>.items {
+               background: var(--red);
+               color: var(--grey);
+               }
+.featured {
+               --red: #a00;
+               -grey: #555;
+               }</code></pre>
+         <p>Dessa maneira, ao colocar a classe div class='items featured' , ja se aplica o _override_ em todo o elemento, dando um override em todos os elementos que usem var(--red) ou var(--grey) ali. De outro modo, teria que se especificar coisas como .featured > button, etcs, para personalizar individualmente todos os childs.</p>
+      </section>
+      <section>
+         <h3>Javascript Theming</h3>
+         <p>Primeiro puxamos as cores, depois, trocamos os valores dentro das variaveis.</p>
+         <pre><code class='code'>var root = document.querySelector(':root');
+var rootStyles = getComputedStyle(root);
+var red = rootStyles.getPropertyValue('--red');
+console.log('red: ', red);
+root.style.setProperty('--red', 'green');</code></pre>
+         <p>Nesse caso, todos os elementos que tem a variavel --red vao mudar a cor de red para green.</p>
+         <p> E possivel depois fazer uma funcao, como clicar um botao onClick, para executar o comando, permitindo DAY/LIGHT themes, por exemplo.</p>
+         <p><strong>Um outro modo de fazer isso e com uma funcao que tira ou poe classes.</strong></p>
+         <pre><code class='code'>body {
+             background-color: (--bgcolor);
+         }
+dark.body {
+            --bgcolor: #555;
+}</code></pre>
+         <p>Nesse caso, a funcao teria de tirar a classe dark.</p>
+      </section>
+      <section>
+         <h3>@media-query: grid</h3>
+         <p> Tambem e possivel atribuir variaveis para valores matematicos, assim, possibilitando uma alternativa para criar sites responsivos. Atribui-se os valores no :root, e se coloca um override nas @media-queries. O exemplo aqui usa cssgrid como ferramenta de layout. Declarar no comeco do documento, no :root. </p>
+         <pre><code class='code'>.grid {
+               --columns: 200px 200px; } </code></pre>
+         <p>No grid layout, isso significa que sao 'duas' colunas de 200px cada. Ao longo do stylesheet,ficam todas as propriedades que serao aplicadas a classe 'grid', como de costume:</p>
+         <pre><code class='code'>.grid {
+               display: grid;
+               grid-template-columns: var(--columns);
+               grid-auto-rows: 140px;
+               grid-gap: 20px;
+               justify-content: center; }</code></pre>
+         <p>Nesse caso, quando se vai configurar o media-query, e necessario incluir no .grid{} o override com a declaração dos novos valores:</p>
+         <pre><code class='code'>@media all and (max-width: 450px) {
+               .grid {
+               --columns: 200px;
+               }
+}</code></pre>
+         <p>Nesse caso, ao inves de 'duas' colunas, temos so 'uma' coluna, caso esteja num celular, por exemplo. O var(--columns) foi alterado de 200px 200px; para apenas 200px;</p>
+      </section>
+   </main>
+   <footer>Made with ♥ by <a href=''>@Line-em</a></footer>
+</body>
+
+</html>

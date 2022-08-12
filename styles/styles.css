@@ -1,109 +1,154 @@
-/*** General Styles ***/
+/*** Universal Styles ***/
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
+:root {
+	--spacecadet: #28283e;
+	--lavender: #e7dada;
+	--melon: #e8aea2;
+	--lightermelon: #f3d4ce;
+	--redsalsa: #f05153;
+	--venetian: #c81919;
+	--transparency: rgba(255, 255, 255, 0.4);
+	--sans: "Assistant", sans-serif;
+	--serif: "Fraunces", serif;
+	--mono: "DM Mono", monospace;
+}
+
 body {
-	font: 400 18px/1.5 'Fraunces', serif;
-	background-color: rgb(221, 198, 193);
-	color: rgb(43, 43, 44);
+	font: 400 18px/1.5 var(--serif);
+	background-color: var(--lightermelon);
+	color: var(--spacecadet);
 	scrollbar-width: thin;
-	scrollbar-color: rgb(173, 21, 21) rgb(221, 198, 193);
+	scrollbar-color: var(--redsalsa) var(--melon);
 }
 
 main {
-	display: grid;
-	grid-template-columns: 600px 600px 600px;
-	grid-template-rows: 350px 350px;
-	grid-row-gap: 10px;
-	justify-content: center;
-	margin: 2%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: baseline;
+	flex-wrap: wrap;
+	margin: 4rem;
+}
+
+h1,
+h2,
+h3,
+p,
+table,
+code,
+section,
+nav,
+li {
+	border-radius: 2rem;
+	margin: 0.8rem;
+	padding: 0 1rem;
+}
+
+h1 {
+	font: 700 4rem var(--serif);
+	text-align: center;
+}
+
+h2 {
+	background: linear-gradient(145deg, var(--melon), #f0c4bb), var(--melon);
+	text-transform: uppercase;
+	color: var(--spacecadet);
+	text-align: center;
 }
 
 /*** footer and nav ***/
 
 footer {
-	background-color: rgb(173, 21, 21);
-	color: rgb(221, 198, 193);
-	padding: 0.2em;
-	font-size: 13px;
+	background: linear-gradient(145deg, var(--transparency), #fae5e1);
+	color: var(--spacecadet);
+	padding: 0.2rem;
+	font-size: 0.8rem;
 	font-weight: 700;
-	font-style: italic;
 	text-align: center;
-	position: fixed;
 	width: 100%;
 	bottom: 0;
 }
 
-footer a {
-	color: rgb(221, 198, 193);
-}
-
-h1 {
-	margin: 5px;
-	font: 700 90px 'Fraunces', serif;
-}
-
 .active {
-	-webkit-text-decoration: underline 10px rgb(173, 21, 21);
-	text-decoration: underline 10px rgb(173, 21, 21);
+	-webkit-text-decoration: underline 0.5rem var(--redsalsa);
+	text-decoration: underline 0.5rem var(--redsalsa);
 }
 
 .notavailable {
 	font-style: italic;
-	color: rgb(134, 78, 78);
+	color: var(--redsalsa);
 }
 
 a {
 	text-decoration: none;
 	font-style: italic;
-	color: rgb(134, 78, 78);
+	color: var(--redsalsa);
 }
 
 nav a:hover {
-	color: rgb(173, 21, 21);
-	-webkit-text-decoration: underline 10px rgb(43, 43, 44);
-	text-decoration: underline 10px rgb(43, 43, 44);
-	transition: ease 300ms;
+	color: var(--venetian);
+	-webkit-text-decoration: underline 0.5rem var(--spacecadet);
+	text-decoration: underline 0.5rem var(--spacecadet);
+	transition: ease 400ms;
 }
 
 a:hover {
-	-webkit-text-decoration: underline 10px rgb(43, 43, 44);
-	text-decoration: underline 2px rgb(43, 43, 44);
+	-webkit-text-decoration: underline 0.5rem var(--spacecadet);
+	text-decoration: underline 0.5rem var(--spacecadet);
 }
 
 /*** content ***/
 
 section {
-	display: inline-block;
-	border-top: 3px solid rgb(173, 21, 21);
-	margin: 2% 4%;
-	/***	width: 450px;
-	max-height: 300px; ***/
+	background-color: #f5ded9;
+	box-shadow: 10px 10px 25px var(--melon), -10px -10px 10px var(--lightermelon);
+	border: 1px var(--lavender) solid;
 	overflow-y: auto;
 	overflow-x: hidden;
+	flex: 1 0 37ch;
+	max-width: 45ch;
+	max-height: 50ch;
 }
 
 table,
 code {
-	background-color: rgb(235, 214, 210);
-	margin: 0.4em;
+	background-color: var(--spacecadet);
+	color: var(--lavender);
+	max-width: 37ch;
+	margin: 0.8rem auto;
+	text-align: left;
 }
 
-code,
 .code {
 	display: block;
-	padding: 0.5em;
-	font-size: 13px;
-	margin: 0.4em;
-	font-family: 'DM Mono', monospace;
-	color: rgb(173, 21, 21);
+	padding: 0.7rem;
+	font: 0.8rem var(--mono);
+	color: var(--melon);
+}
+
+table .code {
+	display: inline-block;
+	padding: 0.7rem;
+	font: 0.8rem var(--mono);
+	color: var(--melon);
+	vertical-align: middle;
+}
+
+thead {
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
 }
 
 th,
 td {
 	padding: 0.3em;
-	font-size: 16px;
+	font-size: 0.8rem;
+	font-family: var(--sans);
+	text-align: left;
 }

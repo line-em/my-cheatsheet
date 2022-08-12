@@ -1,19 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Html</title>
-   <link rel="stylesheet" href="./styles.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Fraunces:ital,wght@0,400;0,700;1,300;1,700&display=swap" rel="stylesheet">
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>CSS</title>
+   <link rel='stylesheet' href='./styles/styles.css'>
+   <link rel='preconnect' href='https://fonts.googleapis.com'>
+   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;700&family=DM+Mono&family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+   <nav>
+      <h1>*
+         <a href='./index.html'>HTML</a> |
+         <span class='active'>CSS</span> |
+         <span class='notavailable'>Javascript</span> |
+         <span class='notavailable'>React.js</span>
+      </h1>
+   </nav>
+   <main>
+      <!-- -->
+      <section>
+         <h2>Links</h2>
+         <ul>
+            <li><a href='./css_variables.html'>CSS Variables</a></li>
+            <li><a href='https://flexbox.malven.co/' target='_blank'>Flexbox - outside page</a></li>
+            <li><a href='http://https://grid.malven.co/' target='_blank' rel='noopener noreferrer'>Grid - outside page</a></li>
+            <li><a href='https://adam-marsden.co.uk/css-cheat-sheet' target='_blank' rel='noopener noreferrer'>Listing CSS tags</a></li>
+         </ul>
+         <h2>Documentation</h2>
+         <a href='https://developer.mozilla.org/en-US/docs/Web/CSS' target='_blank' rel='noopener noreferrer'>MDN</a> or <a href='https://tympanus.net/codrops/css_reference/' target='_blank' rel='noopener noreferrer'>Codrops</a>
+         <p>* Those outside pages are pretty good and straight to the point.</p>
+      </section>
+      <section>
+         <h2>Positioning</h2>
+         <p><code>position: static;</code></p>
+         <ul>
+            <li>default position</li>
+            <li>positioned according to normal flow of HTML document</li>
+            <li>offset properties (top,right,bottom,left) and z-index property have no effect.</li>
+         </ul>
+         <p><code>position: relative;</code></p>
+         <ul>
+            <li>positioned according to normal flow of the document (not taken out of the normal flow)</li>
+            <li>will be affected by offset properties (top,right,bottom,left) and z-index property.
+            </li>
+            <li>if offset properties are used, the element will be offset in relation to its default position.</li>
+         </ul>
+         <p><code>position: absolute;</code></p>
+         <ul>
+            <li>element is taken out of the normal flow of the document</li>
+            <li>positioned in relation to its nearest positioned parent element (grandparent, etc),</li>
+            <li>if no positioned parent element exists, the absolutely positioned element will be positioned in relation to the &lt;html&gt; element</li>
+            <li>will be affected by offset properties (top,right,bottom,left) and z-index property.
+            </li>
+            <code>position: fixed;</code>
+            <ul>
+               <li>element is taken out of the normal flow of the document</li>
+               <li>positioned in relation to the viewport of the browser</li>
+               <li>will be affected by offset properties (top,right,bottom,left) and z-index property.
+               </li>
+            </ul>
+            <code>z-index: 1;</code>
+            <p>Defines the 'depth' of the element, if it's up or down in the hierarchy.<strong>Mostly used to bring sections to front.</strong></p>
+      </section>
+      <section>
+         <h2>Units</h2>
+         <a href="https://mastery.games/post/article-grid-layout/">Cool example! Responsive grid.</a>, <a href="https://mastery.games/post/tile-layouts/">GRID Tile Layouts examples.</a>
+         <table>
+            <thead>
+               <tr>
+                  <th>Tag</th>
+                  <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td class='code'>rem / em</td>
 
+                  <td><b>The size is relative to the root or the parent.</b> Useful for text-related things, like line-height, some margins, etc. Rem is gold for creating responsive layouts, where you almost always increase the font size as the user's device gets wider.</td>
+               </tr>
+               <tr>
+                  <td class='code'>%</td>
+
+                  <td><b>Based on percentage.</b> Only factors the content itself, disregarding margin and gap. When working with GRID, use <b>fr.</b></td>
+               </tr>
+               <tr>
+                  <td class='code'>ch</td>
+
+                  <td><b>Character Width. </b>For text-boxes, as it factors the width of the character 0. Aim for a number between 50-90 for comfortable reading.</td>
+               </tr>
+               <tr>
+                  <td class='code'>px</td>
+
+                  <td><b>Pixels. </b>Not exactly a responsive unit, as it is fixed. px (fixed) are often combined with fr (dynamic) tracks to create fluid layouts. Example: 80px (sidebar), 1fr (content-rest of the page)</td>
+               </tr>
+               <tr>
+                  <td class='code'>fr</td>
+
+                  <td><b>Remaining fraction. </b>Considers gap and margins in GRIDS.<b>Grid only.</b></td>
+               </tr>
+               <tr>
+                  <td class='code'>auto</td>
+
+                  <td><b>Auto simply means the size of the grid items' content.</b> Setting a column to size auto means to set it to its items' width. </td>
+               </tr>
+               <tr>
+                  <td class='code'>vh / vw</td>
+
+                  <td><b>Viewport Height/ Width. </b>Bread and butter of responsive design. 1vw is equal to 1% of the width of the viewport.</td>
+               </tr>
+
+               <tr>
+                  <td class='code'>vmin / vmax</td>
+
+                  <td>100vmin is the width or height of their screen, depending which is smaller. 100vmax is the width or height of their screen, depending which is larger.</td>
+               </tr>
+               <tr>
+                  <td class='code'>min-content</td>
+
+                  <td><b>Self Explanatory. </b>Tells the track to take up as little space as possible while still avoiding overflow.</td>
+               </tr>
+               <tr>
+                  <td class='code'>minmax(min, max)</td>
+
+                  <td><b>Lets you create tracks & gaps with flexible size ranges. </b>It's one of the most flexible CSS Grid options we have. It's the secret sauce for making awesome tile layouts, article layouts, and more. It's often good to use fr units as the max value to make sure your grid doesn't overflow.<b>I dont know if it's grid only.</b>
+                     <p>grid-template-columns: minmax(auto, 1fr) 1fr;</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td class='code'>repeat</td>
+
+                  <td>If your Grid has a lot of rows or columns it can be tedious to declare them all. The repeat option is a shortcut for defining the same sized track(s). In the example, it repeats 6 times the pattern of 1fr 3fr.
+                     <p>grid-template-columns: repeat(6, 1fr 3fr);</p>
+                     <p>I often used CSS Grid to create goal trackers for myself, and repeat definitely comes in handy there. Say you have a goal of drinking a respectable 20 cups of eggnog this season. You can lay down 20 auto columns with repeat in no <a href="https://codepen.io/geddski/pen/oNgXmWv">Example</a></p>
+                  </td>
+               </tr>
+
+            </tbody>
+         </table>
+         <p>Source: CSS-Tricks and Mastery Games</p>
+      </section>
+      <section>
+         <h2>Pseudo-elements</h2>
+         <h3>li+li: useful for breadcrumbs</h3>
+         <code class='code'>.breadcrumb li+li::before {
+            padding: 10px;
+            content: "/" ;
+            }
+            Output: Shopping / Fashion / Shoes / Flats / Brown </code>
+         <p>The + is called the adjacent sibling combinator; it will only select two li‘s when they are immediately next to each other, with the same parent. <b>The element that actually gets selected is the second element of this sibling pair.</b> In this example, the breadcrumb is composed of a ul element, and several li elements. The code above adds a “/“ symbol inbetween all adjacent breadcrumbs. </p>
+         <p>Using a Pseudo-elements like :last-child pode estilizar o breadcrumb para o item atual ficar diferente de todos os outros.</p>
+         <h3>li:not(:last-child)</h3>
+         <p>The first :not() looks at all of li elements in its respective list and then applies a specific CSS property to each li that is not :last-child or last list item. </p>
+      </section>
+      <section>
+         <h2>Fonts</h2>
+         <code class='code'>@font-face {
+            font-family: 'MyParagraphFont';
+            src: url('fonts/Roboto.woff2') format('woff2'),
+            url('fonts/Roboto.woff') format('woff'),
+            url('fonts/Roboto.ttf') format('truetype');
+            }</code>
+         <h3>Shorthand</h3>
+         <code class='code'>body {<br>
+            font: font-style font-variant font-weight font-size/line-height font-family;
+            }<br><br>
+            body {<br>
+            font: italic small-caps normal 13px/1.4 Arial, Helvetica, sans-serif;
+            }</code>
+      </section>
+      <section>
+         <h2>Styling</h2>
+         <a href="https://css-tricks.com/snippets/css/css-triangle/" target="_blank" rel="noopener noreferrer">CSS Triangle</a>
+      </section>
+      <section>
+         <h2>Styling</h2>
+         <a href="https://css-tricks.com/snippets/css/css-triangle/" target="_blank" rel="noopener noreferrer">CSS Triangle</a>
+      </section>
+   </main>
+   <footer>Made with ♥ by <a href=''>@Line-em</a></footer>
 </body>
 
 </html>
